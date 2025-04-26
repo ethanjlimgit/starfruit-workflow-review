@@ -1,9 +1,48 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Progress } from "@/components/ui/progress";
 
 const AnalyzingWorkflow = () => {
   const [progress, setProgress] = React.useState(5);
+  const [currentStep, setCurrentStep] = React.useState(0);
+  const navigate = useNavigate();
+
+  const loadingSteps = [
+    "Analyzing video content...",
+    "Extracting transcript...",
+    "Mapping interaction patterns...",
+    "Building workflow agent..."
+  ];
+
+  useEffect(() => {
+    const progressInterval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(progressInterval);
+          navigate('/workflow/1'); // Navigate to workflow page
+          return prev;
+        }
+        return prev + 2;
+      });
+    }, 40); // Update every 40ms for smooth animation
+
+    const stepInterval = setInterval(() => {
+      setCurrentStep(prev => {
+        if (prev >= loadingSteps.length - 1) {
+          clearInterval(stepInterval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 500); // Change message every 500ms
+
+    // Cleanup intervals
+    return () => {
+      clearInterval(progressInterval);
+      clearInterval(stepInterval);
+    };
+  }, [navigate]);
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
@@ -18,7 +57,7 @@ const AnalyzingWorkflow = () => {
         </div>
         
         <div className="space-y-4 text-gray-400">
-          <p>Analyzing video content...</p>
+          <p className="animate-fade-in">{loadingSteps[currentStep]}</p>
           <p className="text-sm">
             We're building your workflow agent. This usually takes about 15 seconds.
           </p>
