@@ -64,7 +64,7 @@ const Index = () => {
               />
               <ServiceConnection 
                 name="Google Sheets"
-                icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
+                icon="/lovable-uploads/f88de976-38f8-461b-8cfd-012385eda247.png"
                 isConnected={true}
               />
               <ServiceConnection 
