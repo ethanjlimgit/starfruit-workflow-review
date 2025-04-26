@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
@@ -86,7 +85,7 @@ const Index = () => {
             <Button variant="secondary" size="lg" className="bg-[#F97316] hover:bg-[#EA580C] text-white">
               Run on every email
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-gray-700 hover:bg-gray-800">
+            <Button variant="outline" size="lg" className="text-white bg-gray-800 border-gray-700 hover:bg-gray-700">
               Run now
             </Button>
           </div>
