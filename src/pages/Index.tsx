@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
@@ -69,7 +68,7 @@ const Index = () => {
               />
               <ServiceConnection 
                 name="Gmail"
-                icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
+                icon="/lovable-uploads/670e7d2b-8fdb-4637-ab96-382ec04c3ae2.png"
                 isConnected={true}
               />
             </div>
