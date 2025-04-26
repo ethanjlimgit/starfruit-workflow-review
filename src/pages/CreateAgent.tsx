@@ -22,8 +22,8 @@ const CreateAgent = () => {
 
         <div className="bg-gray-800/50 rounded-xl p-8 text-center">
           <div className="flex flex-col items-center gap-6 max-w-lg mx-auto">
-            <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center">
-              <Video className="w-8 h-8 text-gray-300" />
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+              <Video className="w-8 h-8 text-green-600" />
             </div>
             
             <h2 className="text-2xl font-semibold">Record your workflow</h2>
