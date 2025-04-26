@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -45,7 +44,7 @@ const Landing = () => {
     <div className="min-h-screen bg-[#F2FCE2] text-gray-800 p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-semibold">Automate repetitive browser tasks with reliable browser agents</h1>
+          <h1 className="text-2xl font-semibold">Automate repetitive tasks & SOPs with browser agents</h1>
           <div className="flex gap-4">
             <Button 
               className="bg-green-600 hover:bg-green-700"
@@ -106,4 +105,3 @@ const Landing = () => {
 };
 
 export default Landing;
-
