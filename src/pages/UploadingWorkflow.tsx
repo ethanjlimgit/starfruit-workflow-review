@@ -1,8 +1,18 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LoaderCircle } from 'lucide-react';
 
 const UploadingWorkflow = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/analyzing-workflow');
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
   return (
     <div className="min-h-screen bg-gray-950 text-white">
       <div className="p-4 border-b border-gray-800">

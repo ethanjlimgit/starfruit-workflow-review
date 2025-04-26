@@ -11,6 +11,7 @@ import CreateAgent from "./pages/CreateAgent";
 import RecordingScreen from "./components/RecordingScreen";
 import ReviewRecording from "./pages/ReviewRecording";
 import UploadingWorkflow from "./pages/UploadingWorkflow";
+import AnalyzingWorkflow from "./pages/AnalyzingWorkflow";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/recording" element={<RecordingScreen />} />
           <Route path="/review-recording" element={<ReviewRecording />} />
           <Route path="/uploading-workflow" element={<UploadingWorkflow />} />
+          <Route path="/analyzing-workflow" element={<AnalyzingWorkflow />} />
           <Route path="/workflow/:id" element={<Index />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
