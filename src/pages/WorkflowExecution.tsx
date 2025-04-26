@@ -26,7 +26,7 @@ const WorkflowExecution = () => {
     {
       status: 'green',
       title: 'Downloading invoice',
-      description: "Downloading invoice 'harris_invoice.pdf'.",
+      description: "Downloading invoice 'west_coast_invoice.pdf'.",
       time: '+2s'
     },
     {
@@ -38,7 +38,7 @@ const WorkflowExecution = () => {
     {
       status: 'green',
       title: 'Uploading to Google Drive',
-      description: "Uploading invoice with filename 'Harris Consulting_04/03/2024_3230.00'",
+      description: "Uploading invoice with filename 'West Coast Consulting_04/03/2024_3230.00'",
       time: '+12s'
     },
     {
