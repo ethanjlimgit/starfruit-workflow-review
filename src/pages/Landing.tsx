@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -87,7 +86,7 @@ const Landing = () => {
         </div>
 
         <footer className="mt-8 text-center text-sm text-green-800/70">
-          Made in San Francisco
+          Made in San Francisco • Privacy Policy
         </footer>
       </div>
     </div>
