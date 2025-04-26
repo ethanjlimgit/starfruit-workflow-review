@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -7,8 +8,8 @@ const ReviewRecording = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
-      <div className="p-4 border-b border-gray-800">
+    <div className="min-h-screen bg-[#F2FCE2] text-gray-800">
+      <div className="p-4 border-b border-green-100">
         <h1 className="text-xl font-mono">New Workflow</h1>
       </div>
       

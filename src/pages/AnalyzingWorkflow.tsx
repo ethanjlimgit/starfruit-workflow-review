@@ -45,8 +45,8 @@ const AnalyzingWorkflow = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
-      <div className="p-4 border-b border-gray-800">
+    <div className="min-h-screen bg-[#F2FCE2] text-gray-800">
+      <div className="p-4 border-b border-green-100">
         <h1 className="text-xl font-mono">Workflows</h1>
       </div>
       
