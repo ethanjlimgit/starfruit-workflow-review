@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -64,7 +63,7 @@ const Landing = () => {
                 <TableHead>Name</TableHead>
                 <TableHead>Last Updated</TableHead>
                 <TableHead>Created At</TableHead>
-                <TableHead>Preferences</TableHead>
+                <TableHead>Status</TableHead>
                 <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
