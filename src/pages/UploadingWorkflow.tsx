@@ -1,12 +1,8 @@
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/ui/button';
-import { Upload } from 'lucide-react';
+import { LoaderCircle } from 'lucide-react';
 
-const ReviewRecording = () => {
-  const navigate = useNavigate();
-
+const UploadingWorkflow = () => {
   return (
     <div className="min-h-screen bg-gray-950 text-white">
       <div className="p-4 border-b border-gray-800">
@@ -26,21 +22,14 @@ const ReviewRecording = () => {
             </div>
           </div>
 
-          <div className="flex gap-4 justify-end">
-            <Button
-              variant="outline"
-              onClick={() => navigate('/recording')}
-              className="bg-gray-800 hover:bg-gray-700 border-gray-700"
+          <div className="flex justify-center">
+            <button
+              className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-md flex items-center gap-2 w-full max-w-md"
+              disabled
             >
-              Record Again
-            </Button>
-            <Button 
-              className="bg-orange-500 hover:bg-orange-600 px-8"
-              onClick={() => navigate('/uploading-workflow')}
-            >
-              <Upload className="mr-2 h-4 w-4" />
-              Upload Recording
-            </Button>
+              <LoaderCircle className="h-5 w-5 animate-spin" />
+              <span>Uploading...</span>
+            </button>
           </div>
         </div>
 
@@ -77,4 +66,4 @@ const ReviewRecording = () => {
   );
 };
 
-export default ReviewRecording;
+export default UploadingWorkflow;
