@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -41,7 +42,7 @@ const Landing = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#F2FCE2] text-gray-800 p-8">
+    <div className="min-h-screen bg-gray-950 text-white p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-semibold">Automate repetitive tasks & SOPs with browser agents</h1>
@@ -55,7 +56,7 @@ const Landing = () => {
             </Button>
             <Button 
               variant="outline"
-              className="border-green-400 text-green-600 hover:bg-green-400/10"
+              className="border-green-400 text-green-400 hover:bg-green-400/10"
               onClick={() => {}}
             >
               Launch Browser
@@ -63,7 +64,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="bg-white/50 rounded-lg p-4 border border-green-100 shadow-sm">
+        <div className="bg-gray-900 rounded-lg p-4 border border-gray-800 shadow-sm">
           <Table>
             <TableHeader>
               <TableRow>
@@ -78,7 +79,7 @@ const Landing = () => {
               {agents.map((agent) => (
                 <TableRow 
                   key={agent.id}
-                  className="cursor-pointer hover:bg-green-50/50"
+                  className="cursor-pointer hover:bg-gray-800"
                   onClick={() => navigate(`/workflow/${agent.id}`)}
                 >
                   <TableCell className="font-medium">{agent.name}</TableCell>
@@ -96,7 +97,7 @@ const Landing = () => {
           </Table>
         </div>
 
-        <footer className="mt-8 text-center text-sm text-green-800/70">
+        <footer className="mt-8 text-center text-sm text-gray-500">
           Made in San Francisco • Privacy Policy
         </footer>
       </div>
