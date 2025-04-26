@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import StepIndicator from '../components/StepIndicator';
-import ServiceConnection from '../components/ServiceConnection';
-import ConfigInput from '../components/ConfigInput';
+import { Input } from "@/components/ui/input";
+import { Info } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { ServiceConnection } from '@/components/ServiceConnection';
 
 const Index = () => {
   const { id } = useParams();
@@ -11,56 +12,83 @@ const Index = () => {
   const [sheetsLink, setSheetsLink] = useState('');
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-8">Review your automation</h1>
-          <StepIndicator currentStep={2} />
-        </div>
+    <div className="min-h-screen bg-gray-950">
+      <div className="p-4 border-b border-gray-800 flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+          <path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9l-6-6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        <span className="text-white text-xl font-mono">Workflows</span>
+        <Button variant="outline" size="sm" className="ml-auto text-gray-300">
+          View runs
+        </Button>
+      </div>
 
-        <div className="bg-gray-800 rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold text-orange-500 mb-4">Invoice Organization</h2>
-          <p className="text-gray-400 mb-8">Organizing your invoices from Gmail into Google Sheets and Drive</p>
-
-          <div className="mb-8">
-            <h3 className="text-gray-300 mb-4">Here's what I need from you</h3>
-            <ConfigInput
-              label="Google Drive Link"
-              placeholder="Please provide the google drive link"
-              value={driveLink}
-              onChange={setDriveLink}
-            />
-            <ConfigInput
-              label="Google Sheets Link"
-              placeholder="Please provide the google sheets link"
-              value={sheetsLink}
-              onChange={setSheetsLink}
-            />
+      <div className="max-w-3xl mx-auto py-8 px-6">
+        <div className="space-y-6">
+          <div>
+            <h1 className="text-2xl font-semibold text-white mb-2">Invoice Organization</h1>
+            <p className="text-gray-400">Organizing your invoices from Gmail into Google Sheets and Drive</p>
           </div>
 
-          <div className="mb-8">
-            <h3 className="text-gray-300 mb-4">I'll need to access these services</h3>
-            <ServiceConnection 
-              name="Google Drive" 
-              icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
-            />
-            <ServiceConnection 
-              name="Google Sheets" 
-              icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
-            />
-            <ServiceConnection 
-              name="Gmail" 
-              icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
-            />
+          <div className="space-y-4">
+            <h2 className="text-white font-medium">Here's what I need from you</h2>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-gray-400">Google Drive Link</label>
+                <Input 
+                  value={driveLink}
+                  onChange={(e) => setDriveLink(e.target.value)}
+                  placeholder="https://drive.google.com/drive/folders/..."
+                  className="bg-gray-900 border-gray-800 text-white"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-gray-400">Google Sheets Link</label>
+                <Input 
+                  value={sheetsLink}
+                  onChange={(e) => setSheetsLink(e.target.value)}
+                  placeholder="https://docs.google.com/spreadsheets/d/..."
+                  className="bg-gray-900 border-gray-800 text-white"
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="flex justify-end gap-4">
-            <button className="px-6 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors">
+          <div className="space-y-4">
+            <h2 className="text-white font-medium">I'll need to access these services</h2>
+            <div className="space-y-2">
+              <ServiceConnection 
+                name="Google Drive"
+                icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
+                isConnected={true}
+              />
+              <ServiceConnection 
+                name="Google Sheets"
+                icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
+                isConnected={true}
+              />
+              <ServiceConnection 
+                name="Gmail"
+                icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
+                isConnected={true}
+              />
+            </div>
+          </div>
+
+          <div className="bg-gray-900 rounded-lg p-4 flex items-center gap-2">
+            <Info size={20} className="text-gray-400" />
+            <p className="text-gray-400 text-sm">
+              You'll be able to track all your workflow runs in the runs history
+            </p>
+          </div>
+
+          <div className="flex justify-end gap-3">
+            <Button variant="secondary" size="lg" className="bg-[#F97316] hover:bg-[#EA580C] text-white">
+              Run on every email
+            </Button>
+            <Button variant="outline" size="lg" className="text-white border-gray-700 hover:bg-gray-800">
               Run now
-            </button>
-            <button className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">
-              Run automatically
-            </button>
+            </Button>
           </div>
         </div>
       </div>
