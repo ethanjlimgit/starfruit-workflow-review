@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -35,7 +34,7 @@ const ReviewRecording = () => {
               Record Again
             </Button>
             <Button 
-              className="bg-orange-500 hover:bg-orange-600 px-8"
+              className="bg-green-600 hover:bg-green-700 px-8"
               onClick={() => navigate('/uploading-workflow')}
             >
               <Upload className="mr-2 h-4 w-4" />
@@ -69,7 +68,7 @@ const ReviewRecording = () => {
               </div>
             </div>
 
-            <p className="text-xl font-semibold text-orange-500">Stop wasting hours on repetitive tasks.</p>
+            <p className="text-xl font-semibold text-green-500">Stop wasting hours on repetitive tasks.</p>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const UploadingWorkflow = () => {
 
           <div className="flex justify-center">
             <button
-              className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-md flex items-center gap-2 w-full max-w-md"
+              className="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-md flex items-center gap-2 w-full max-w-md"
               disabled
             >
               <LoaderCircle className="h-5 w-5 animate-spin" />
@@ -68,7 +68,7 @@ const UploadingWorkflow = () => {
               </div>
             </div>
 
-            <p className="text-xl font-semibold text-orange-500">Stop wasting hours on repetitive tasks.</p>
+            <p className="text-xl font-semibold text-green-500">Stop wasting hours on repetitive tasks.</p>
           </div>
         </div>
       </div>

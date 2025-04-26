@@ -52,8 +52,8 @@ const AnalyzingWorkflow = () => {
       
       <div className="max-w-lg mx-auto mt-32 px-6 py-12 text-center space-y-12">
         <div className="relative">
-          <Progress value={progress} className="h-1 w-full bg-orange-950" />
-          <span className="absolute top-4 left-1/2 -translate-x-1/2 text-orange-500">{progress}%</span>
+          <Progress value={progress} className="h-1 w-full bg-green-950" />
+          <span className="absolute top-4 left-1/2 -translate-x-1/2 text-green-500">{progress}%</span>
         </div>
         
         <div className="space-y-4 text-gray-400">

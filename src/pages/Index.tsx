@@ -82,7 +82,7 @@ const Index = () => {
           </div>
 
           <div className="flex justify-end gap-3">
-            <Button variant="secondary" size="lg" className="bg-[#F97316] hover:bg-[#EA580C] text-white">
+            <Button variant="secondary" size="lg" className="bg-green-600 hover:bg-green-700 text-white">
               Run on every email
             </Button>
             <Button variant="outline" size="lg" className="text-white bg-gray-800 border-gray-700 hover:bg-gray-700">

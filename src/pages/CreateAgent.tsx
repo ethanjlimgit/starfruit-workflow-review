@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Video } from 'lucide-react';
@@ -32,7 +33,7 @@ const CreateAgent = () => {
             </p>
 
             <Button 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg rounded-lg"
               onClick={handleStartRecording}
             >
               Start Recording
