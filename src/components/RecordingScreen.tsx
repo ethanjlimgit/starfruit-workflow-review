@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Square, Timer, StopRecording } from 'lucide-react';
+import { Square, Clock, StopCircle } from 'lucide-react';
 import { Button } from './ui/button';
 
 const RecordingScreen = () => {
@@ -53,7 +53,7 @@ const RecordingScreen = () => {
             onClick={handleStopRecording}
             className="bg-gray-800 hover:bg-gray-700 border-gray-700"
           >
-            <StopRecording className="mr-2" />
+            <StopCircle className="mr-2" />
             Stop Recording
           </Button>
         </div>
