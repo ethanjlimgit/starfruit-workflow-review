@@ -53,13 +53,6 @@ const Landing = () => {
               <Plus className="mr-2 h-4 w-4" />
               Create Agent
             </Button>
-            <Button 
-              variant="outline"
-              className="border-green-400 text-green-600 hover:bg-green-400/10"
-              onClick={() => {}}
-            >
-              Launch Browser
-            </Button>
           </div>
         </div>
 
