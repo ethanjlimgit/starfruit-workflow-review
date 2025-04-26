@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -61,10 +60,10 @@ const Landing = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="text-base">Name</TableHead>
-                <TableHead className="text-base">Last Updated</TableHead>
-                <TableHead className="text-base">Created At</TableHead>
-                <TableHead className="text-base">Actions</TableHead>
+                <TableHead>Name</TableHead>
+                <TableHead>Last Updated</TableHead>
+                <TableHead>Created At</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -74,11 +73,11 @@ const Landing = () => {
                   className="cursor-pointer hover:bg-green-50/50"
                   onClick={() => navigate(`/workflow/${agent.id}`)}
                 >
-                  <TableCell className="font-medium text-base">{agent.name}</TableCell>
-                  <TableCell className="text-base">{agent.lastUpdated}</TableCell>
-                  <TableCell className="text-base">{agent.createdAt}</TableCell>
+                  <TableCell className="font-medium">{agent.name}</TableCell>
+                  <TableCell>{agent.lastUpdated}</TableCell>
+                  <TableCell>{agent.createdAt}</TableCell>
                   <TableCell>
-                    <Button variant="ghost" size="sm" className="text-base">•••</Button>
+                    <Button variant="ghost" size="sm">•••</Button>
                   </TableCell>
                 </TableRow>
               ))}
@@ -87,7 +86,7 @@ const Landing = () => {
         </div>
 
         <footer className="mt-8 text-center text-sm text-green-800/70">
-          Made in San Francisco
+          Made in San Francisco • Privacy Policy
         </footer>
       </div>
     </div>
