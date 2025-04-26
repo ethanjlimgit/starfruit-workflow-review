@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 const WorkflowExecution = () => {
   const { id } = useParams();
   const [visibleSteps, setVisibleSteps] = useState(0);
+  const [isWorkflowComplete, setIsWorkflowComplete] = useState(false);
   
   const currentTime = new Date().toLocaleString('en-US', {
     month: 'short',
@@ -60,6 +61,11 @@ const WorkflowExecution = () => {
         setVisibleSteps(i);
         // Random delay between 50ms and 200ms
         await new Promise(resolve => setTimeout(resolve, Math.random() * 150 + 50));
+        
+        // If all steps have been shown, set workflow as complete
+        if (i === steps.length) {
+          setIsWorkflowComplete(true);
+        }
       }
     };
     
@@ -79,7 +85,9 @@ const WorkflowExecution = () => {
         <div className="bg-gray-900/50 rounded-lg p-6 mb-6">
           <div className="flex justify-between items-center mb-4">
             <div>
-              <div className="text-blue-400 text-sm mb-1">In Progress</div>
+              <div className={`${isWorkflowComplete ? 'text-green-500' : 'text-blue-400'} text-sm mb-1`}>
+                {isWorkflowComplete ? 'Completed' : 'In Progress'}
+              </div>
               <div className="text-lg font-medium">Run 1</div>
               <div className="text-gray-400 text-sm">{currentTime}</div>
             </div>
