@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -41,13 +42,13 @@ const Landing = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-8">
+    <div className="min-h-screen bg-[#F2FCE2] text-gray-800 p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-semibold">Automate repetitive browser tasks with reliable browser agents</h1>
           <div className="flex gap-4">
             <Button 
-              className="bg-purple-600 hover:bg-purple-700"
+              className="bg-green-600 hover:bg-green-700"
               onClick={() => navigate('/create-agent')}
             >
               <Plus className="mr-2 h-4 w-4" />
@@ -55,7 +56,7 @@ const Landing = () => {
             </Button>
             <Button 
               variant="outline"
-              className="border-purple-400 text-purple-400 hover:bg-purple-400/10"
+              className="border-green-400 text-green-600 hover:bg-green-400/10"
               onClick={() => {}}
             >
               Launch Browser
@@ -63,7 +64,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <div className="bg-gray-800/50 rounded-lg p-4">
+        <div className="bg-white/50 rounded-lg p-4 border border-green-100 shadow-sm">
           <Table>
             <TableHeader>
               <TableRow>
@@ -78,14 +79,14 @@ const Landing = () => {
               {agents.map((agent) => (
                 <TableRow 
                   key={agent.id}
-                  className="cursor-pointer hover:bg-gray-700/50"
+                  className="cursor-pointer hover:bg-green-50/50"
                   onClick={() => navigate(`/workflow/${agent.id}`)}
                 >
                   <TableCell className="font-medium">{agent.name}</TableCell>
                   <TableCell>{agent.lastUpdated}</TableCell>
                   <TableCell>{agent.createdAt}</TableCell>
                   <TableCell>
-                    <div className="w-6 h-6 rounded-full bg-purple-400/20" />
+                    <div className="w-6 h-6 rounded-full bg-green-400/20" />
                   </TableCell>
                   <TableCell>
                     <Button variant="ghost" size="sm">•••</Button>
@@ -96,7 +97,7 @@ const Landing = () => {
           </Table>
         </div>
 
-        <footer className="mt-8 text-center text-sm text-gray-400">
+        <footer className="mt-8 text-center text-sm text-green-800/70">
           Made in San Francisco • Privacy Policy
         </footer>
       </div>
@@ -105,3 +106,4 @@ const Landing = () => {
 };
 
 export default Landing;
+
