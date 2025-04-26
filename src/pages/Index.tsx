@@ -1,10 +1,12 @@
 
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import StepIndicator from '../components/StepIndicator';
 import ServiceConnection from '../components/ServiceConnection';
 import ConfigInput from '../components/ConfigInput';
 
 const Index = () => {
+  const { id } = useParams();
   const [driveLink, setDriveLink] = useState('');
   const [sheetsLink, setSheetsLink] = useState('');
 

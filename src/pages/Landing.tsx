@@ -2,36 +2,104 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '../components/ui/table';
+import { Plus } from 'lucide-react';
+
+const agents = [
+  {
+    id: '1',
+    name: 'Spreadsheet Data Sync',
+    lastUpdated: 'Mar 5, 2024',
+    createdAt: 'Mar 5, 2024'
+  },
+  {
+    id: '2',
+    name: 'Daily Report Automation',
+    lastUpdated: 'Mar 28, 2024',
+    createdAt: 'Mar 28, 2024'
+  },
+  {
+    id: '3',
+    name: 'Customer Outreach Workflow',
+    lastUpdated: 'Mar 27, 2024',
+    createdAt: 'Mar 28, 2024'
+  },
+  {
+    id: '4',
+    name: 'Data Entry Automation',
+    lastUpdated: 'Mar 26, 2024',
+    createdAt: 'Mar 26, 2024'
+  },
+  {
+    id: '5',
+    name: 'Weekly Analytics Report',
+    lastUpdated: 'Mar 20, 2024',
+    createdAt: 'Mar 20, 2024'
+  }
+];
 
 const Landing = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Turn Repetitive Tasks & SOPs into Automated Workflows</h1>
-          <p className="text-gray-400 text-lg mb-8">
-            Record and explain your task once. Starfruit handles it forever. No coding. No drag and drop.
-            Just like training a co-worker.
-          </p>
+      <div className="max-w-6xl mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-2xl font-semibold">Automate repetitive browser tasks with reliable browser agents</h1>
+          <div className="flex gap-4">
+            <Button 
+              className="bg-purple-600 hover:bg-purple-700"
+              onClick={() => navigate('/create-agent')}
+            >
+              <Plus className="mr-2 h-4 w-4" />
+              Create Agent
+            </Button>
+            <Button 
+              variant="outline"
+              className="border-purple-400 text-purple-400 hover:bg-purple-400/10"
+              onClick={() => {}}
+            >
+              Launch Browser
+            </Button>
+          </div>
         </div>
 
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold mb-4">Stop wasting hours on repetitive tasks</h2>
-          <p className="text-gray-400">
-            See how you can automate anything and save hours weekly on invoice processing while eliminating data entry errors.
-          </p>
+        <div className="bg-gray-800/50 rounded-lg p-4">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Name</TableHead>
+                <TableHead>Last Updated</TableHead>
+                <TableHead>Created At</TableHead>
+                <TableHead>Preferences</TableHead>
+                <TableHead>Actions</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {agents.map((agent) => (
+                <TableRow 
+                  key={agent.id}
+                  className="cursor-pointer hover:bg-gray-700/50"
+                  onClick={() => navigate(`/workflow/${agent.id}`)}
+                >
+                  <TableCell className="font-medium">{agent.name}</TableCell>
+                  <TableCell>{agent.lastUpdated}</TableCell>
+                  <TableCell>{agent.createdAt}</TableCell>
+                  <TableCell>
+                    <div className="w-6 h-6 rounded-full bg-purple-400/20" />
+                  </TableCell>
+                  <TableCell>
+                    <Button variant="ghost" size="sm">•••</Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
 
-        <div className="flex justify-center">
-          <Button 
-            onClick={() => navigate('/step1')} 
-            className="px-6 py-3 bg-orange-500 hover:bg-orange-600 transition-colors"
-          >
-            Get Started
-          </Button>
-        </div>
+        <footer className="mt-8 text-center text-sm text-gray-400">
+          Made in New York • Privacy Policy
+        </footer>
       </div>
     </div>
   );
