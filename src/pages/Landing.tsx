@@ -48,10 +48,10 @@ const Landing = () => {
           <h1 className="text-2xl font-semibold">Automate repetitive tasks & SOPs with browser agents</h1>
           <div className="flex gap-4">
             <Button 
-              className="bg-green-600 hover:bg-green-700"
+              className="bg-green-600 hover:bg-green-700 px-6 py-3 text-base"
               onClick={() => navigate('/create-agent')}
             >
-              <Plus className="mr-2 h-4 w-4" />
+              <Plus className="mr-3 h-5 w-5" />
               Create Workflow
             </Button>
           </div>
