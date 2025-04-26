@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
 import { Info } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { ServiceConnection } from '@/components/ServiceConnection';
+import ServiceConnection from '@/components/ServiceConnection';
 
 const Index = () => {
   const { id } = useParams();
