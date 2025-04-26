@@ -1,9 +1,11 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const WorkflowExecution = () => {
   const { id } = useParams();
+  const [visibleSteps, setVisibleSteps] = useState(0);
+  
   const currentTime = new Date().toLocaleString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -12,6 +14,57 @@ const WorkflowExecution = () => {
     minute: 'numeric',
     hour12: true
   });
+
+  const steps = [
+    {
+      status: 'blue',
+      title: 'Workflow triggered from email',
+      description: 'Found email with invoice attachment.',
+      time: '+0s'
+    },
+    {
+      status: 'green',
+      title: 'Downloading invoice',
+      description: "Downloading invoice 'harris_invoice.pdf'.",
+      time: '+2s'
+    },
+    {
+      status: 'green',
+      title: 'Reading invoice',
+      description: 'Extracting vendor name, date, amount and invoice id.',
+      time: '+6s'
+    },
+    {
+      status: 'green',
+      title: 'Uploading to Google Drive',
+      description: "Uploading invoice with filename 'Harris Consulting_04/03/2024_3230.00'",
+      time: '+12s'
+    },
+    {
+      status: 'green',
+      title: 'Updating Google Sheets',
+      description: 'Adding a new row to the sheet with the invoice details.',
+      time: '+15s'
+    },
+    {
+      status: 'green',
+      title: 'Workflow execution complete',
+      description: 'Successfully processed invoice',
+      time: '+18s'
+    }
+  ];
+
+  useEffect(() => {
+    const showSteps = async () => {
+      for (let i = 0; i <= steps.length; i++) {
+        setVisibleSteps(i);
+        // Random delay between 50ms and 200ms
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 150 + 50));
+      }
+    };
+    
+    showSteps();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
@@ -49,71 +102,21 @@ const WorkflowExecution = () => {
           <div className="mt-8">
             <h3 className="text-gray-400 mb-4">Execution Timeline</h3>
             <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+              {steps.slice(0, visibleSteps).map((step, index) => (
+                <div 
+                  key={index}
+                  className="flex items-start gap-3 animate-fade-in"
+                >
+                  <div className={`w-5 h-5 rounded-full bg-${step.status}-500/20 flex items-center justify-center mt-1`}>
+                    <div className={`w-2 h-2 rounded-full bg-${step.status}-500`}></div>
+                  </div>
+                  <div>
+                    <div className="text-white">{step.title}</div>
+                    <div className="text-gray-400 text-sm">{step.description}</div>
+                    <div className="text-gray-500 text-xs mt-1">{step.time}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-white">Workflow triggered from email</div>
-                  <div className="text-gray-400 text-sm">Found email with invoice attachment.</div>
-                  <div className="text-gray-500 text-xs mt-1">+0s</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                </div>
-                <div>
-                  <div className="text-white">Downloading invoice</div>
-                  <div className="text-gray-400 text-sm">Downloading invoice 'harris_invoice.pdf'.</div>
-                  <div className="text-gray-500 text-xs mt-1">+2s</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                </div>
-                <div>
-                  <div className="text-white">Reading invoice</div>
-                  <div className="text-gray-400 text-sm">Extracting vendor name, date, amount and invoice id.</div>
-                  <div className="text-gray-500 text-xs mt-1">+6s</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                </div>
-                <div>
-                  <div className="text-white">Uploading to Google Drive</div>
-                  <div className="text-gray-400 text-sm">Uploading invoice with filename 'Harris Consulting_04/03/2024_3230.00'</div>
-                  <div className="text-gray-500 text-xs mt-1">+12s</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                </div>
-                <div>
-                  <div className="text-white">Updating Google Sheets</div>
-                  <div className="text-gray-400 text-sm">Adding a new row to the sheet with the invoice details.</div>
-                  <div className="text-gray-500 text-xs mt-1">+15s</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                </div>
-                <div>
-                  <div className="text-white">Workflow execution complete</div>
-                  <div className="text-gray-400 text-sm">Successfully processed invoice</div>
-                  <div className="text-gray-500 text-xs mt-1">+18s</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
