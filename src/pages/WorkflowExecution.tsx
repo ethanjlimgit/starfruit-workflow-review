@@ -73,12 +73,12 @@ const WorkflowExecution = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F2FCE2] text-gray-800">
-      <div className="p-4 border-b border-green-100 flex items-center gap-2">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-800">
+    <div className="min-h-screen bg-gray-950 text-white">
+      <div className="p-4 border-b border-gray-800 flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
           <path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9l-6-6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-        <span className="text-gray-800 text-xl font-mono">Workflows</span>
+        <span className="text-white text-xl font-mono">Workflows</span>
       </div>
 
       <div className="max-w-4xl mx-auto p-6">

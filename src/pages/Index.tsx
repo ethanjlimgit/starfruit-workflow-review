@@ -17,12 +17,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F2FCE2] text-gray-800">
-      <div className="p-4 border-b border-green-100 flex items-center gap-2">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-800">
+    <div className="min-h-screen bg-gray-950">
+      <div className="p-4 border-b border-gray-800 flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
           <path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9l-6-6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-        <span className="text-gray-800 text-xl font-mono">Workflows</span>
+        <span className="text-white text-xl font-mono">Workflows</span>
         <Button variant="outline" size="sm" className="ml-auto text-gray-300">
           View runs
         </Button>
@@ -31,12 +31,12 @@ const Index = () => {
       <div className="max-w-3xl mx-auto py-8 px-6">
         <div className="space-y-6">
           <div>
-            <h1 className="text-2xl font-semibold text-gray-800 mb-2">Invoice Organization</h1>
+            <h1 className="text-2xl font-semibold text-white mb-2">Invoice Organization</h1>
             <p className="text-gray-400">Organizing your invoices from Gmail into Google Sheets and Drive</p>
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-gray-800 font-medium">Here's what I need from you</h2>
+            <h2 className="text-white font-medium">Here's what I need from you</h2>
             <div className="space-y-4">
               <div className="space-y-2">
                 <label className="text-gray-400">Google Drive Link</label>
@@ -60,7 +60,7 @@ const Index = () => {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-gray-800 font-medium">I'll need to access these services</h2>
+            <h2 className="text-white font-medium">I'll need to access these services</h2>
             <div className="space-y-2">
               <ServiceConnection 
                 name="Google Drive"

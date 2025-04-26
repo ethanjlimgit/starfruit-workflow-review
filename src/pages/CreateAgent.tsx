@@ -13,7 +13,7 @@ const CreateAgent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F2FCE2] text-gray-800 p-8">
+    <div className="min-h-screen bg-gray-900 text-white p-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-8">New Workflow</h1>

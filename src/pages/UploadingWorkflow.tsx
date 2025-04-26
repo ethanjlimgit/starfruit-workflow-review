@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LoaderCircle } from 'lucide-react';
@@ -15,8 +14,8 @@ const UploadingWorkflow = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-[#F2FCE2] text-gray-800">
-      <div className="p-4 border-b border-green-100">
+    <div className="min-h-screen bg-gray-950 text-white">
+      <div className="p-4 border-b border-gray-800">
         <h1 className="text-xl font-mono">New Workflow</h1>
       </div>
       
