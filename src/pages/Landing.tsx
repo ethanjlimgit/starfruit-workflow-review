@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -51,7 +52,7 @@ const Landing = () => {
               onClick={() => navigate('/create-agent')}
             >
               <Plus className="mr-2 h-4 w-4" />
-              Create Agent
+              Create Workflow
             </Button>
           </div>
         </div>
