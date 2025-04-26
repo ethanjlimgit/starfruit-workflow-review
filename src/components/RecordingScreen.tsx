@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Square, Clock, StopCircle } from 'lucide-react';
@@ -17,7 +16,7 @@ const RecordingScreen = () => {
   }, []);
 
   const handleStopRecording = () => {
-    navigate('/workflow/new');
+    navigate('/review-recording');
   };
 
   const formatTime = (totalSeconds: number) => {
