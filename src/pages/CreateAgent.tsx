@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Video } from 'lucide-react';
@@ -9,8 +8,7 @@ const CreateAgent = () => {
   const navigate = useNavigate();
 
   const handleStartRecording = () => {
-    // For now, just navigate to step 2
-    navigate('/workflow/new');
+    navigate('/recording');
   };
 
   return (

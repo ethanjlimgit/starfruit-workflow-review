@@ -8,6 +8,7 @@ import Landing from "./pages/Landing";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CreateAgent from "./pages/CreateAgent";
+import RecordingScreen from "./components/RecordingScreen";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/create-agent" element={<CreateAgent />} />
+          <Route path="/recording" element={<RecordingScreen />} />
           <Route path="/workflow/:id" element={<Index />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
