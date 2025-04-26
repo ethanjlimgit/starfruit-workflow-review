@@ -63,7 +63,6 @@ const Landing = () => {
                 <TableHead>Name</TableHead>
                 <TableHead>Last Updated</TableHead>
                 <TableHead>Created At</TableHead>
-                <TableHead>Status</TableHead>
                 <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
@@ -77,9 +76,6 @@ const Landing = () => {
                   <TableCell className="font-medium">{agent.name}</TableCell>
                   <TableCell>{agent.lastUpdated}</TableCell>
                   <TableCell>{agent.createdAt}</TableCell>
-                  <TableCell>
-                    <div className="w-6 h-6 rounded-full bg-green-400/20" />
-                  </TableCell>
                   <TableCell>
                     <Button variant="ghost" size="sm">•••</Button>
                   </TableCell>
