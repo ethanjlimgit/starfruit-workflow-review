@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,7 @@ import RecordingScreen from "./components/RecordingScreen";
 import ReviewRecording from "./pages/ReviewRecording";
 import UploadingWorkflow from "./pages/UploadingWorkflow";
 import AnalyzingWorkflow from "./pages/AnalyzingWorkflow";
+import WorkflowExecution from "./pages/WorkflowExecution";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +29,7 @@ const App = () => (
           <Route path="/uploading-workflow" element={<UploadingWorkflow />} />
           <Route path="/analyzing-workflow" element={<AnalyzingWorkflow />} />
           <Route path="/workflow/:id" element={<Index />} />
+          <Route path="/workflow/:id/execution" element={<WorkflowExecution />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

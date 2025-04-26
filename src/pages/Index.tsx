@@ -4,11 +4,17 @@ import { Input } from "@/components/ui/input";
 import { Info } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import ServiceConnection from '@/components/ServiceConnection';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [driveLink, setDriveLink] = useState('');
   const [sheetsLink, setSheetsLink] = useState('');
+
+  const handleRunEveryEmail = () => {
+    navigate(`/workflow/${id}/execution`);
+  };
 
   return (
     <div className="min-h-screen bg-gray-950">
@@ -82,7 +88,12 @@ const Index = () => {
           </div>
 
           <div className="flex justify-end gap-3">
-            <Button variant="secondary" size="lg" className="bg-green-600 hover:bg-green-700 text-white">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="bg-green-600 hover:bg-green-700 text-white"
+              onClick={handleRunEveryEmail}
+            >
               Run on every email
             </Button>
             <Button variant="outline" size="lg" className="text-white bg-gray-800 border-gray-700 hover:bg-gray-700">
