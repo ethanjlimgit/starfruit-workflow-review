@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Input } from "@/components/ui/input";
@@ -58,7 +59,7 @@ const Index = () => {
             <div className="space-y-2">
               <ServiceConnection 
                 name="Google Drive"
-                icon="/lovable-uploads/9c9a59aa-3f1d-484b-87ad-ce950ae10ed1.png"
+                icon="/lovable-uploads/e1c4e2a7-8284-4554-b134-b1a6134128c6.png"
                 isConnected={true}
               />
               <ServiceConnection 
