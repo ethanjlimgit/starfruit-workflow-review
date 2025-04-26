@@ -45,18 +45,18 @@ const AnalyzingWorkflow = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
-      <div className="p-4 border-b border-gray-800">
+    <div className="min-h-screen bg-[#F2FCE2] text-gray-800">
+      <div className="p-4 border-b border-green-100">
         <h1 className="text-xl font-mono">Workflows</h1>
       </div>
       
       <div className="max-w-lg mx-auto mt-32 px-6 py-12 text-center space-y-12">
         <div className="relative">
-          <Progress value={progress} className="h-1 w-full bg-green-950" />
-          <span className="absolute top-4 left-1/2 -translate-x-1/2 text-green-500">{progress}%</span>
+          <Progress value={progress} className="h-1 w-full bg-green-100" />
+          <span className="absolute top-4 left-1/2 -translate-x-1/2 text-green-600">{progress}%</span>
         </div>
         
-        <div className="space-y-4 text-gray-400">
+        <div className="space-y-4 text-gray-600">
           <p className="animate-fade-in">{loadingSteps[currentStep]}</p>
           <p className="text-sm">
             We're building your workflow agent. This usually takes about 15 seconds.
