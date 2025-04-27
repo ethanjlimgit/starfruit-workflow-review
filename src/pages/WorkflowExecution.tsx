@@ -83,15 +83,6 @@ const WorkflowExecution = () => {
           <path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9l-6-6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
         <span className="text-white text-xl font-mono">Workflows</span>
-        <Button 
-          variant="outline" 
-          size="sm" 
-          onClick={handleEdit}
-          className="ml-auto text-gray-300 bg-gray-800 border-gray-700 hover:bg-gray-700"
-        >
-          <Edit className="w-4 h-4 mr-2" />
-          Edit
-        </Button>
       </div>
 
       <div className="max-w-4xl mx-auto p-6">
@@ -104,6 +95,15 @@ const WorkflowExecution = () => {
               <div className="text-lg font-medium">Run 1</div>
               <div className="text-gray-400 text-sm">{currentTime}</div>
             </div>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={handleEdit}
+              className="text-gray-300 bg-gray-800 border-gray-700 hover:bg-gray-700"
+            >
+              <Edit className="w-4 h-4 mr-2" />
+              Edit
+            </Button>
           </div>
 
           <div className="mt-8">
