@@ -1,15 +1,33 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Video } from 'lucide-react';
+import { Video, Monitor } from 'lucide-react';
 import StepIndicator from '../components/StepIndicator';
 import { Button } from '../components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "../components/ui/dialog"
 
 const CreateAgent = () => {
   const navigate = useNavigate();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const handleStartRecording = () => {
-    navigate('/recording');
+  const handleStartRecording = async () => {
+    setIsDialogOpen(true);
+  };
+
+  const handleScreenShare = async () => {
+    try {
+      await navigator.mediaDevices.getDisplayMedia({ video: true });
+      setIsDialogOpen(false);
+      navigate('/recording');
+    } catch (error) {
+      console.error('Error sharing screen:', error);
+    }
   };
 
   return (
@@ -41,6 +59,35 @@ const CreateAgent = () => {
           </div>
         </div>
       </div>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="bg-gray-800 text-white border-gray-700">
+          <DialogHeader>
+            <DialogTitle>Share Your Screen</DialogTitle>
+            <DialogDescription className="text-gray-400">
+              To record your workflow, please share your screen.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex items-center justify-center p-4">
+            <Monitor className="h-16 w-16 text-gray-400" />
+          </div>
+          <DialogFooter>
+            <Button
+              variant="ghost"
+              onClick={() => setIsDialogOpen(false)}
+              className="text-gray-400 hover:text-white hover:bg-gray-700"
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={handleScreenShare}
+              className="bg-green-600 hover:bg-green-700 text-white"
+            >
+              Share Screen
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
