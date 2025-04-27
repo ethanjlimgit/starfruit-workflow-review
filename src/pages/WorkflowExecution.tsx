@@ -1,8 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Edit } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const WorkflowExecution = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [visibleSteps, setVisibleSteps] = useState(0);
   const [isWorkflowComplete, setIsWorkflowComplete] = useState(false);
@@ -59,10 +61,8 @@ const WorkflowExecution = () => {
     const showSteps = async () => {
       for (let i = 0; i <= steps.length; i++) {
         setVisibleSteps(i);
-        // Random delay between 50ms and 200ms
         await new Promise(resolve => setTimeout(resolve, Math.random() * 150 + 50));
         
-        // If all steps have been shown, set workflow as complete
         if (i === steps.length) {
           setIsWorkflowComplete(true);
         }
@@ -72,6 +72,10 @@ const WorkflowExecution = () => {
     showSteps();
   }, []);
 
+  const handleEdit = () => {
+    navigate(`/workflow/${id}`);
+  };
+
   return (
     <div className="min-h-screen bg-gray-950 text-white">
       <div className="p-4 border-b border-gray-800 flex items-center gap-2">
@@ -79,6 +83,15 @@ const WorkflowExecution = () => {
           <path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9l-6-6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
         <span className="text-white text-xl font-mono">Workflows</span>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          onClick={handleEdit}
+          className="ml-auto text-gray-300 bg-gray-800 border-gray-700 hover:bg-gray-700"
+        >
+          <Edit className="w-4 h-4 mr-2" />
+          Edit
+        </Button>
       </div>
 
       <div className="max-w-4xl mx-auto p-6">
