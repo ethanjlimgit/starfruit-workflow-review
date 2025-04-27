@@ -12,6 +12,7 @@ import ReviewRecording from "./pages/ReviewRecording";
 import UploadingWorkflow from "./pages/UploadingWorkflow";
 import AnalyzingWorkflow from "./pages/AnalyzingWorkflow";
 import WorkflowExecution from "./pages/WorkflowExecution";
+import WorkflowConfig from "./pages/WorkflowConfig";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +29,7 @@ const App = () => (
           <Route path="/review-recording" element={<ReviewRecording />} />
           <Route path="/uploading-workflow" element={<UploadingWorkflow />} />
           <Route path="/analyzing-workflow" element={<AnalyzingWorkflow />} />
-          <Route path="/workflow/:id" element={<Index />} />
+          <Route path="/workflow/:id" element={<WorkflowConfig />} />
           <Route path="/workflow/:id/execution" element={<WorkflowExecution />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
