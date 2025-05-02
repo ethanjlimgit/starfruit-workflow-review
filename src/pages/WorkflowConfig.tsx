@@ -10,7 +10,7 @@ const WorkflowConfig = () => {
   return (
     <div className="min-h-screen bg-gray-950 text-white">
       <div className="p-4 border-b border-gray-800 flex items-center gap-2">
-        <h1 className="text-xl font-mono">Retrieve Oncology Summary</h1>
+        <h1 className="text-xl font-mono">Zendesk Password Reset Guide</h1>
       </div>
 
       <div className="max-w-4xl mx-auto p-6">
@@ -34,10 +34,10 @@ const WorkflowConfig = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-start">
                   <div className="space-y-2">
-                    <h3 className="font-medium">Open https://secure2.oncoemr.com and only click login button</h3>
+                    <h3 className="font-medium">Navigate to Zendesk Help Center homepage</h3>
                     <div className="space-y-1">
-                      <div className="text-sm text-gray-400">Go to a given URL</div>
-                      <div className="text-sm text-gray-400">Click on an element with the given XPath</div>
+                      <div className="text-sm text-gray-400">Go to URL: https://support.zendesk.com</div>
+                      <div className="text-sm text-gray-400 font-mono">XPath: /html/body/div[1]/div/div[1]/header/div[1]/div/div[1]/a</div>
                     </div>
                   </div>
                   <Button variant="ghost" size="sm" className="text-gray-400">×</Button>
@@ -52,9 +52,10 @@ const WorkflowConfig = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-start">
                   <div className="space-y-2">
-                    <h3 className="font-medium">Select Astra cancer case new brunswick only</h3>
+                    <h3 className="font-medium">Click on Account section in the navigation menu</h3>
                     <div className="space-y-1">
-                      <div className="text-sm text-gray-400">Click on an element with the given XPath</div>
+                      <div className="text-sm text-gray-400">Click on element with the given XPath</div>
+                      <div className="text-sm text-gray-400 font-mono">XPath: /html/body/div[1]/div/div[2]/main/div/div[2]/div/div[3]/ul/li[4]/a</div>
                     </div>
                   </div>
                   <Button variant="ghost" size="sm" className="text-gray-400">×</Button>
@@ -69,9 +70,10 @@ const WorkflowConfig = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-start">
                   <div className="space-y-2">
-                    <h3 className="font-medium">On the top left, click the "search icon"</h3>
+                    <h3 className="font-medium">Select "Password Reset" option from dropdown</h3>
                     <div className="space-y-1">
                       <div className="text-sm text-gray-400">Click on an element with the given XPath</div>
+                      <div className="text-sm text-gray-400 font-mono">XPath: /html/body/div[1]/div/div[2]/main/div/div[3]/div[2]/ul/li[2]/a</div>
                     </div>
                   </div>
                   <Button variant="ghost" size="sm" className="text-gray-400">×</Button>
@@ -86,9 +88,28 @@ const WorkflowConfig = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-start">
                   <div className="space-y-2">
-                    <h3 className="font-medium">Enter Test as Last Name, 123 as First, and 88451 as Med Rec #, then click find</h3>
+                    <h3 className="font-medium">Fill in email address field</h3>
+                    <div className="space-y-1">
+                      <div className="text-sm text-gray-400">Type into input field with given XPath</div>
+                      <div className="text-sm text-gray-400 font-mono">XPath: /html/body/div[1]/div/div[2]/div[2]/div/form/div/div[3]/div/input</div>
+                    </div>
+                  </div>
+                  <Button variant="ghost" size="sm" className="text-gray-400">×</Button>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 bg-gray-800/50 p-4 rounded-lg">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-700 text-sm">
+                5
+              </div>
+              <div className="flex-1">
+                <div className="flex justify-between items-start">
+                  <div className="space-y-2">
+                    <h3 className="font-medium">Click Submit button to request password reset</h3>
                     <div className="space-y-1">
                       <div className="text-sm text-gray-400">Click on an element with the given XPath</div>
+                      <div className="text-sm text-gray-400 font-mono">XPath: /html/body/div[1]/div/div[2]/div[2]/div/form/div/div[4]/button</div>
                     </div>
                   </div>
                   <Button variant="ghost" size="sm" className="text-gray-400">×</Button>

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Video, Monitor } from 'lucide-react';
@@ -34,7 +35,7 @@ const CreateAgent = () => {
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-8">New Workflow</h1>
+          <h1 className="text-4xl font-bold mb-8">Create Zendesk Support Workflow</h1>
           <StepIndicator currentStep={1} />
         </div>
 
@@ -44,11 +45,22 @@ const CreateAgent = () => {
               <Video className="w-8 h-8 text-gray-300" />
             </div>
             
-            <h2 className="text-2xl font-semibold">Record your workflow</h2>
+            <h2 className="text-2xl font-semibold">Record your support workflow</h2>
             
             <p className="text-gray-400">
-              I'll watch and learn as you perform your task. Please explain what you're doing as you go.
+              Show AgentSpark how you guide customers through password reset in Zendesk. Please explain what you're doing as you go.
             </p>
+
+            <div className="bg-gray-700/50 p-4 rounded-lg w-full text-left">
+              <h3 className="font-medium mb-2">Recording Tips:</h3>
+              <ul className="text-sm text-gray-300 space-y-1 list-disc pl-4">
+                <li>Navigate clearly through each step of the Zendesk interface</li>
+                <li>Explain the purpose of each action you take</li>
+                <li>Speak as if you're teaching the customer directly</li>
+                <li>Highlight where to find the password reset option</li>
+                <li>Show how to complete the form and submit the request</li>
+              </ul>
+            </div>
 
             <Button 
               className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg rounded-lg"
@@ -65,7 +77,7 @@ const CreateAgent = () => {
           <DialogHeader>
             <DialogTitle>Share Your Screen</DialogTitle>
             <DialogDescription className="text-gray-400">
-              To record your workflow, please share your screen.
+              To record your Zendesk workflow, please share your browser window.
             </DialogDescription>
           </DialogHeader>
           <div className="flex items-center justify-center p-4">

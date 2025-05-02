@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Square, Clock, StopCircle } from 'lucide-react';
@@ -28,7 +29,7 @@ const RecordingScreen = () => {
   return (
     <div className="min-h-screen bg-gray-950 text-white flex flex-col">
       <div className="p-4 border-b border-gray-800">
-        <h1 className="text-xl font-mono">New Workflow</h1>
+        <h1 className="text-xl font-mono">Record Zendesk Password Reset Guidance</h1>
       </div>
       
       <div className="flex-1 flex flex-col items-center justify-center p-8">
@@ -42,8 +43,21 @@ const RecordingScreen = () => {
             {formatTime(seconds)}
           </div>
           
+          <div className="space-y-4 text-gray-300">
+            <p>
+              Please demonstrate the Zendesk password reset workflow:
+            </p>
+            <ol className="list-decimal text-left w-fit mx-auto space-y-2">
+              <li>Navigate to Zendesk Help Center</li>
+              <li>Find the Account section</li>
+              <li>Select Password Reset option</li>
+              <li>Show how to enter email address</li>
+              <li>Click the Submit button</li>
+            </ol>
+          </div>
+          
           <p className="text-gray-400">
-            Speak clearly and explain each step of your workflow
+            Speak clearly and explain each step for the customer
           </p>
           
           <Button 
